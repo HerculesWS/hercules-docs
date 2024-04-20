@@ -1,7 +1,4 @@
-<figure>
-<img src="Hxd-main.png" title="Typical hex editor: HxD" />
-<figcaption>Typical hex editor: HxD</figcaption>
-</figure>
+<center>![HxD, a Hex Editor](assets/hxd_main.png)</center>
 
 # A what?
 
@@ -16,27 +13,25 @@ details see the [related Wikipedia article](https://en.wikipedia.org/wiki/Hex_ed
 ## XVI32
 
 One of the best Hex Editors, and probably the most user friendly is
-[http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm
-XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm_XVI32 "wikilink"). The name XVI32 is derived from
+[XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm). The name XVI32 is derived from
 XVI, the roman notation for the number 16.
 
 ## Other Editors
 
-A fairly comprehensive comparison chart can be found on [wikipedia:Comparison_of_hex_editors
-wikipedia](https://en.wikipedia.org/wiki/Comparison_of_hex_editors_wikipedia)
+A fairly comprehensive comparison chart can be found on [Wikipedia: Comparison of Hex Editors](https://en.wikipedia.org/wiki/Comparison_of_hex_editors_wikipedia)
 
 # Common RO Related Uses
 
 The most common uses for a hex editor are:  
-\* Changing [DATA.INI](DATA.INI "wikilink") to something else
 
+- Changing [DATA.INI](./data-ini.md) to something else
 - Changing the client name in the window title
-- Renaming [Clientinfo.xml](Clientinfo.xml "wikilink") to something else
-- Removal of /who command
+- Renaming [Clientinfo.xml](./clientinfo.md) to something else
+- Removal of `/who` command
 
 # External Links
 
-<http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm>  
-<http://en.wikipedia.org/wiki/Comparison_of_hex_editors>
+- <http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm>  
+- <http://en.wikipedia.org/wiki/Comparison_of_hex_editors>
 
 [Category:Tools](Category:Tools "wikilink")

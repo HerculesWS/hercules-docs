@@ -1,8 +1,8 @@
-1.  \`data.ini\`
+# Data.ini
 
-**DATA.INI** is a client-side file, which is used to specify multiple [GRF](GRF "wikilink") archives to be loaded by the
-client. It is only supported by [hexed](Hexing "wikilink") clients, which have been diffed with the option *\[Data\]
-Enable Multiple GRFs*. Official clients for main servers and [Sakray](Sakray "wikilink") read data.grf, and rdata.grf or
+**DATA.INI** is a client-side file, which is used to specify multiple [GRF](./grf.md) archives to be loaded by the
+client. It is only supported by [hexed](./hexing.md) clients, which have been diffed with the option *\[Data\]
+Enable Multiple GRFs*. Official clients for main servers and [Sakray](../basics/sakray.md) read data.grf, and rdata.grf or
 sdata.grf respectively.
 
 ## File Format
@@ -12,19 +12,24 @@ The file follows default [INI file](https://en.wikipedia.org/wiki/INI_file) conv
 the GRF archive name as value. The file is stored in the same folder as the client it is supposed to be used by. Typical
 DATA.INI:
 
-`[data]`  
-`0=yourserver.grf`  
-`1=rdata.grf`  
-`2=data.grf`
+```
+[data]
+0=yourserver.grf
+1=rdata.grf
+2=data.grf
+```
 
-yourserver.grf  
+- `yourserver.grf`
+
 Normally the archive of your server is on the position 0 to override all other archives.
 
-rdata.grf  
+- `rdata.grf`
+
 Contains data from the test server, before it gets into data.grf, allowing to use pre-release content. For old Sakray
 clients this archive was called **sdata.grf**.
 
-data.grf  
+- `data.grf`
+
 The official main archive, which hosts the most vital data for the client. If it is missing, the client is most likely
 to crash during start-up.
 
@@ -33,7 +38,7 @@ Maximum amount of archives, that can be specified, is 10.
 ## Other Names
 
 You can also rename the **DATA.INI** file to any name that is 8 characters long (including the extension). Then, just
-edit your client with a [Hex Editor](Hex_Editor "wikilink"). Find DATA.INI and replace with your new filename.
+edit your client with a [Hex Editor](./hex-editor.md). Find DATA.INI and replace with your new filename.
 
 ### Advanced name modification
 
@@ -44,10 +49,7 @@ Start up OllyDbg, go to menu File -\> Open and find the client executable to pat
 take a while, but once the progress bar on the button is gone, right click into the code window, choose "Search for" and
 "All referenced text strings".
 
-<figure>
-<img src="Datainiedit1.png" title="Datainiedit1.png" />
-<figcaption>Datainiedit1.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit1.png)</center>
 
 After another short while, all found and referenced strings are shown, you are interested in "DATA.INI" of course. Press
 "Home" key on your keyboard to get to the top of the list, then right click the list, and choose "Search for text". In
@@ -56,19 +58,13 @@ the popup window, enter "data.ini" (without quotes), uncheck case-sensitive, che
 The selection inside the list should jump to a line with ".\data.ini" inside it (unless the diff has changed since I
 last used diffs, a few years ago).
 
-<figure>
-<img src="Datainiedit3.png" title="Datainiedit3.png" />
-<figcaption>Datainiedit3.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit2.png)</center>
 
 Press "Enter" key on your keyboard while the entry is highlighted, which should move you to the code position, where the
 string is used. Also as you could see in the list, the code shows, that there are two occurrences in the code, where
 ".\data.ini" is used.
 
-<figure>
-<img src="Datainiedit4.png" title="Datainiedit4.png" />
-<figcaption>Datainiedit4.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit3.png)</center>
 
 In my case, there is a lot of space after the text strings at offset 0x68dd38, so you just need to change the two
 occurrences to point there. To do that, mark one of the lines, that refer to ".\data.ini" (PUSH 68DCF9 in this case) and
@@ -76,10 +72,7 @@ hit "Space" key on your keyboard, which opens a assembling line. All you have to
 the offset, where you intend to place your new name (68DD38), after editing click "Assemble", then "Cancel". Repeat the
 same for the other line as well. The edited lines should turn red.
 
-<figure>
-<img src="Datainiedit5.png" title="Datainiedit5.png" />
-<figcaption>Datainiedit5.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit4.png)</center>
 
 Now you could also add the string in there, but that can be done more easily inside the hex editor later. Note, that the
 offset inside OllyDbg (and most of the assemblers) is actual offset +0x400000, so you need to subtract the value, to get
@@ -89,18 +82,12 @@ copy; unless you modified something else as well, clicking "Copy All" will do. A
 modified file (title bar icon "D"). Right click it's contents and choose "Save file" and save the file under a name of
 your choice.
 
-<figure>
-<img src="Datainiedit6.png" title="Datainiedit6.png" />
-<figcaption>Datainiedit6.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit5.png)</center>
 
 You can close OllyDbg now, remains setting the new name. As said before, you need to convert the disassembler offset, to
 an absolute one and go to that offset on a hex editor of your choice.
 
-<figure>
-<img src="Datainiedit7.png" title="Datainiedit7.png" />
-<figcaption>Datainiedit7.png</figcaption>
-</figure>
+<center>![](assets/dataini_edit6.png)</center>
 
 The first mark shows the old position of the name, which is no longer used, the second mark, is on the offset, where the
 new name is read. As you seen in this case, you have plenty of space. Make sure, that the name ends with a zero byte

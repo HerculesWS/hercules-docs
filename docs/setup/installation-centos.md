@@ -1,25 +1,25 @@
 # Installation (CentOS)
 
-This guide covers how to install [Hercules](Hercules "wikilink") on [CentOS](wikipedia:CentOS "wikilink") and other
-[versions of Linux](wikipedia:List_of_Linux_distributions#RPM-based "wikilink") that use
-[yum](wikipedia:Yellowdog_Updater,_Modified "wikilink").
+This guide covers how to install [Hercules](Hercules "wikilink") on [CentOS](https://en.wikipedia.org/wiki/CentOS) and other
+[versions of Linux](https://en.wikipedia.org/wiki/List_of_Linux_distributions#RPM-based) that use
+[yum](https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified).
 
 ## Requirements
 
-- [CentOS](wikipedia:CentOS "wikilink") or an [RPM-based
-  Linux](wikipedia:List_of_Linux_distributions#RPM-based "wikilink") that has the
-  **[yum](wikipedia:Yellowdog_Updater,_Modified "wikilink")** command
-- root access or access to an account that has [sudo privileges](wikipedia:Sudo "wikilink")
+- [CentOS](https://en.wikipedia.org/wiki/CentOS) or an [RPM-based
+  Linux](https://en.wikipedia.org/wiki/List_of_Linux_distributions#RPM-based) that has the
+  **[yum](https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified)** command
+- root access or access to an account that has [sudo privileges](https://en.wikipedia.org/wiki/Sudo)
 - an Internet connection to download install packages
 
 ## Prerequisites
 
-All of these commands will be typed at the [command-line interface](wikipedia:Command-line_interface "wikilink").
+All of these commands will be typed at the [command-line interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
 ### Install Prerequisites
 
-1.  Login to your server via [SSH](wikipedia:Secure_Shell "wikilink"), or if you are already logged into a
-    [GUI](wikipedia:Graphical_user_interface "wikilink") press Ctrl+Alt+T to open a terminal window.
+1.  Login to your server via [SSH](https://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a
+    [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
 2.  Type the following command (this will install GCC, Make, MySQL, MySQL header files, MySQL Server, PCRE header files,
     Git, and Zlib header files)
       
@@ -30,7 +30,7 @@ All of these commands will be typed at the [command-line interface](wikipedia:Co
 
 ### Create a non-root Linux user
 
-By the [principle of least privilege](wikipedia:Principle_of_least_privilege "wikilink"), it is recommended you do
+By the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), it is recommended you do
 **NOT** run Hercules as root.
 
 1.  Type the following command to create a non-root Linux account:
@@ -39,7 +39,7 @@ By the [principle of least privilege](wikipedia:Principle_of_least_privilege "wi
 
     `--create-home` = create the user's home directory
 
-    `--shell` = sets their login shell to [Bash](wikipedia:Bash_(Unix_shell) "wikilink")
+    `--shell` = sets their login shell to [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
     **`hercules1234`** = the login name of the new Linux account
 

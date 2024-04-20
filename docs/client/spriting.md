@@ -2,7 +2,7 @@
 
 You will need
 
-- Image Editing Software (e.g. [Photoshop](wikipedia:Adobe_Photoshop "wikilink"))
+- Image Editing Software (e.g. [Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop))
 - Concept
 - Skill
 

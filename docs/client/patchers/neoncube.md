@@ -1,6 +1,6 @@
 To use this guide you must have a basic understanding of [Hercules](Hercules "wikilink"), a [Web
-Server](wikipedia:Web_Server "wikilink") and how to edit, upload and manipulate files. You also need to be versatile in
-making [GRF](GRF "wikilink") and [RAR](wikipedia:RAR_(file_format) "wikilink") files.
+Server](https://en.wikipedia.org/wiki/Web_Server) and how to edit, upload and manipulate files. You also need to be versatile in
+making [GRF](GRF "wikilink") and [RAR](https://en.wikipedia.org/wiki/RAR_(file_format)) files.
 
 ## Programs you need
 

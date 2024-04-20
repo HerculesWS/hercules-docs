@@ -112,6 +112,6 @@ Index: map/clif.h
 
 ## See Also
 
-- [wikipedia:Diff#Unified_format](wikipedia:Diff#Unified_format "wikilink")
+- [wikipedia:Diff#Unified_format](https://en.wikipedia.org/wiki/Diff#Unified_format)
 
 [Category:File Formats](Category:File_Formats "wikilink")

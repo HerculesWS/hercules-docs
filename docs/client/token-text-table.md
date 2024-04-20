@@ -5,8 +5,8 @@ found inside and outside the [GRF](GRF "wikilink").
 ## File Format
 
 The files are plain text files, where rows and columns are separated by the token character
-[\#](wikipedia:Hash_symbol "wikilink"). It can be edited with every text editor like Notepad. Make sure, that the file
-is not stored in [Unicode](wikipedia:Unicode "wikilink") or [UTF-8](wikipedia:UTF-8 "wikilink").
+[\#](https://en.wikipedia.org/wiki/Hash_symbol). It can be edited with every text editor like Notepad. Make sure, that the file
+is not stored in [Unicode](https://en.wikipedia.org/wiki/Unicode) or [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
 
 The amount of columns is fixed for each file, that uses this file format. Rows are either limited by available memory or
 by hard-coded limits, as seen below. Note that all of these limits can be lifted by hexing the client. Whether line

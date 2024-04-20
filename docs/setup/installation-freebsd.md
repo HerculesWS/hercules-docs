@@ -1,7 +1,7 @@
 # Installation (FreeBSD)
 
 This article is aimed at installing and getting [Hercules](Hercules "wikilink") to run successfully on a machine running
-[FreeBSD](wikipedia:FreeBSD "wikilink") 9.1-RELEASE. It is assumed that FreeBSD was installed with the ports collection
+[FreeBSD](https://en.wikipedia.org/wiki/FreeBSD) 9.1-RELEASE. It is assumed that FreeBSD was installed with the ports collection
 and enabled Linux Threading on install. This guide will NOT teach you how to network FreeBSD, install FreeBSD or
 configure any additional system settings (besides the ones needed to run Hercules and its dependencies).
 

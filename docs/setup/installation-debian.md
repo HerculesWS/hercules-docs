@@ -1,24 +1,24 @@
 # Installation (Debian)
 
-This guide covers how to install [Hercules](Hercules "wikilink") on [Debian](wikipedia:Debian "wikilink") and other
-[versions of Linux](wikipedia:List_of_Linux_distributions#Debian-based "wikilink") that use apt-get.
+This guide covers how to install [Hercules](Hercules "wikilink") on [Debian](https://en.wikipedia.org/wiki/Debian) and other
+[versions of Linux](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based) that use apt-get.
 
 ## Requirements
 
-- [Debian](wikipedia:Debian "wikilink") or an
-  [wikipedia:List_of_Linux_distributions##Debian-based](wikipedia:List_of_Linux_distributions##Debian-based "wikilink")
+- [Debian](https://en.wikipedia.org/wiki/Debian) or an
+  [wikipedia:List_of_Linux_distributions##Debian-based](https://en.wikipedia.org/wiki/List_of_Linux_distributions##Debian-based)
   that has the apt-get command
-- root access or access to an account that has [sudo privileges](wikipedia:Sudo "wikilink")
+- root access or access to an account that has [sudo privileges](https://en.wikipedia.org/wiki/Sudo)
 - an Internet connection to download install packages
 
 ## Prerequisites
 
-All of these commands will be typed at the [command-line interface](wikipedia:Command-line_interface "wikilink").
+All of these commands will be typed at the [command-line interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
 ### Install Prerequisites
 
-1.  Login to your server via [SSH](wikipedia:Secure_Shell "wikilink"), or if you are already logged into a
-    [GUI](wikipedia:Graphical_user_interface "wikilink") press Ctrl+Alt+T to open a terminal window.
+1.  Login to your server via [SSH](https://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a
+    [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
 
 apt-get update apt-get upgrade apt-get dist-update // To update to the latest version of Debian
 
@@ -29,7 +29,7 @@ apt-get update apt-get upgrade apt-get dist-update // To update to the latest ve
 
 ### Create a non-root Linux user
 
-By the [principle of least privilege](wikipedia:Principle_of_least_privilege "wikilink"), it is recommended you do
+By the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), it is recommended you do
 **NOT** run Hercules as root.
 
 1.  Type the following command to create a non-root Linux account:

@@ -7,7 +7,7 @@ sdata.grf respectively.
 
 ## File Format
 
-The file follows default [INI file](wikipedia:INI_file "wikilink") conventions. All entries are part of the section
+The file follows default [INI file](https://en.wikipedia.org/wiki/INI_file) conventions. All entries are part of the section
 *data*. Each entry consists of a zero-based priority index as key name (0 = highest priority, 9 = lowest priority) and
 the GRF archive name as value. The file is stored in the same folder as the client it is supposed to be used by. Typical
 DATA.INI:

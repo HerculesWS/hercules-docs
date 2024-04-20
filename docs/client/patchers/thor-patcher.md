@@ -1,6 +1,6 @@
 [Thor Patcher](Thor_Patcher "wikilink") is designed with the client-side config file embed *inside* the patcher itself.
 Since it uses no extra DLLs, you may distribute 1 file to your players. This guide will not discuss how to setup a [Web
-Server](wikipedia:Web_Server "wikilink").
+Server](https://en.wikipedia.org/wiki/Web_Server).
 
 # Features
 

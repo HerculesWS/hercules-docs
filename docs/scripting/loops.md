@@ -7,7 +7,7 @@ do the same thing x times after eachother. The loops available in the Athena scr
 and continue; will be covered. The intention of this page is that you will get to understand how loops work, and how to
 use them properly.
 
-### [For Loop](wikipedia:For_loop "wikilink")
+### [For Loop](https://en.wikipedia.org/wiki/For_loop)
 
 The for loop is probably the most seen loop used in Hercules scripting, this is usually used to loop through arrays and
 execute a series of commands for each array entry. But you can use it every time you need to execute a series of
@@ -61,7 +61,7 @@ is 1. Because the expression is true, the code inside of the curlies is executed
 expression is false, which will happen once @i is 10. As soon as that happens, it quits the loop and continues on the
 first line after the closing curly.
 
-### [While Loop](wikipedia:While_loop "wikilink")
+### [While Loop](https://en.wikipedia.org/wiki/While_loop)
 
 This loop is almost the same as a for loop, but less automated. With this loop, you'll have to initialize the variable
 yourself, and increase it yourself. In some situations, this is better then the for loop. The general format for a while
@@ -92,7 +92,7 @@ a lot of things, including a (theoretically) never ending cycle:
 
 Note that the above is a script that will need you to relog!
 
-### [Do ... While Loop](wikipedia:Do_while_loop "wikilink")
+### [Do ... While Loop](https://en.wikipedia.org/wiki/Do_while_loop)
 
 Ah... We've already reached the last loop type. Wow, I actually managed to write stuff about the for and while loop
 eh... Well then. This loop is basically the same as a while loop, only the way it is executed is slightly different (and

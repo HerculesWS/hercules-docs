@@ -38,7 +38,7 @@ clients to become obsolete.
 Recently, the patch and skin information of the official patcher is Lua-based as well, stored in nine files spanning
 five folders.
 
-[Lua](wikipedia:Lua_(programming_language) "wikilink") is a free scripting language, which can be both embedded or
+[Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)) is a free scripting language, which can be both embedded or
 stand-alone.
 
 ## How do we use it?

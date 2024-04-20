@@ -1,4 +1,4 @@
-To download Hercules, you need to perform a **clone** from [Git](wikipedia:Git "wikilink") (Git) repository. Checking
+To download Hercules, you need to perform a **clone** from [Git](https://en.wikipedia.org/wiki/Git) (Git) repository. Checking
 out from a repository creates a working copy of it on your local machine.
 
 A Git is required to perform a clone. Recommended applications are:

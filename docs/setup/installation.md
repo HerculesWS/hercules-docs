@@ -13,7 +13,7 @@ To run Hercules, the following programs must be installed on the machine that wi
 
 ### \*nix based
 
-For \*nix, most of these programs will come as [Packages](wikipedia:Software_package_%28installation%29 "wikilink") with
+For \*nix, most of these programs will come as [Packages](https://en.wikipedia.org/wiki/Software_package_%28installation%29) with
 your OS, for example, the FreeBSD Ports collection, or Debians apt-get or aptitude. Please see your OS's help/support
 pages to find out how to utilize package installations. As a general rule, the following packages will be required to
 compile Hercules:  

@@ -2,8 +2,8 @@
 	This page may contain outdated information, incompatible with the current version of Hercules and its coding standards.
 
 This article covers taking the configuration steps to ensure a successful connection to your servers. You are required
-to know the in and outs of your OS, as well as what a [LAN IP](wikipedia:Local_area_network "wikilink") and a [WAN
-IP](wikipedia:Wide_area_network "wikilink") are.
+to know the in and outs of your OS, as well as what a [LAN IP](https://en.wikipedia.org/wiki/Local_area_network) and a [WAN
+IP](https://en.wikipedia.org/wiki/Wide_area_network) are.
 
 ## Basics of the three servers
 

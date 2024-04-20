@@ -11,7 +11,7 @@ cannot edit the size of the npc's shadow either).
 - Actor
 - Actor 2 (Recommended)
 - Already made spr
-- A [hex editor](Hex_Editor "wikilink") (If you daring and wish to edit the anything the Actors can't do)
+- A [hex editor](./hex-editor.md) (If you daring and wish to edit the anything the Actors can't do)
 
 ## Editing An Act File With Actor
 
@@ -28,7 +28,10 @@ you can go to act01, this will have a different number of frames, and may have d
 death sprite, ect.) that were not in the previous frame. These are the actions. A visual for better understanding
 (notice how one is act00 and the other is act01):
 
-![](ActOR.gif "ActOR.gif")![](ActOR2.gif "ActOR2.gif")
+<center>
+![](assets/actor_overview1.gif)
+![](assets/actor_overview2.gif)
+</center>
 
 To move the sprite around on the sprite, click the first row (the one with a 0) and then click and drag inside the red
 box that appears around the sprite. To change what sprite is used, change the 0 to another number. To edit the number,
@@ -38,10 +41,9 @@ be 0-14, 0 being the very first frame.
 
 ## Actor's Interface
 
-<figure>
-<img src="actor.jpg" title="actor.jpg" />
-<figcaption>actor.jpg</figcaption>
-</figure>
+<center>
+![](assets/actor_interface1.jpg)
+</center>
 
 - 1: Menu, File. Open and saving files via this area.
 - 2: Menu, Edit. This area is for editing the sprite that goes with the .act file. You can replace frames, add frames
@@ -116,10 +118,9 @@ they wish.
 
 ## Frame Edit Window
 
-<figure>
-<img src="frame_edit.jpg" title="frame_edit.jpg" />
-<figcaption>frame_edit.jpg</figcaption>
-</figure>
+<center>
+![](assets/actor_frame_edit.jpg)
+</center>
 
 Accessed via the 'Edit Frame' in the menu (#5) this window allows you to delete frames from an action's direction, to
 also copy a frame and to swap frames. Erasing frames will delete the desired number frame that you pick in the box.
@@ -133,10 +134,9 @@ Then use the Action frame Scroll-bar (#15) to see the results.
 
 ## Act Copy Window
 
-<figure>
-<img src="act_copy.jpg" title="act_copy.jpg" />
-<figcaption>act_copy.jpg</figcaption>
-</figure>
+<center>
+![](assets/actor_act_copy.jpg)
+</center>
 
 Accessed via the 'ACT(Dir) Copy' in the menu (#6) this window allows you to copy a single action's direction or
 directions to others. The first copying the up and down directions and side to side to the diagonal directions as
@@ -151,10 +151,9 @@ with you can see the results. Remember to save often as Actor has no undo.
 
 ## Actor's Interface
 
-<figure>
-<img src="actor2.jpg" title="actor2.jpg" />
-<figcaption>actor2.jpg</figcaption>
-</figure>
+<center>
+![](assets/actor_interface2.jpg)
+</center>
 
 - 1: Menu, File. Open and saving files via this area.
 - 2: Menu, Edit. This area is for editing the sprite that goes with the .act file. You can replace frames, add frames
@@ -175,7 +174,7 @@ with you can see the results. Remember to save often as Actor has no undo.
 - 5: Menu, Dir.4-\>8. This is much the same as Actor 1's Act Copy Window which allows you to copy a single action's
   direction to another or like Actor 1's copy 4 directions to the other 4. They copy in a Clockwise (CW) and
   Counter-Clockwise (CCW) direction.
-- 6: Menu, Script. Unlike Actor 1, scripts written in [Lua](Lua "wikilink") can be loaded into Actor 2 in order to do
+- 6: Menu, Script. Unlike Actor 1, scripts written in [Lua](./lua.md) can be loaded into Actor 2 in order to do
   any of a number of tasks. Example scripts should come with your copy of Actor 2. You can also edit the scripts via the
   'Script \> Edit'.
 - 7: Menu, Help. While the 'Help \> Help' in Actor 2 is non-existent (No matter how many times you click it, it will do
@@ -253,7 +252,7 @@ with you can see the results. Remember to save often as Actor has no undo.
   it's image frames with the same pallet. If so you should refer to the Sprite guide to fix this issue.
 - Q: Why isn't my sprite showing in my client?
 - A: You either didn't add it, named it wrong, didn't list it with what ever list text file in the client needs it
-  listed in. Or you might need to edit the [server source code](Mmo.h "wikilink") to increase the available id's for
+  listed in. Or you might need to edit the [server source code](../setup/mmo-h.md) to increase the available id's for
   items, npc, mobs, etc.
 - Q: Why would I try using Actor when there is Actor 2?
 - A: Some of the things you might be doing may be easier in Actor 1 or you like how it does something over how Actor 2

@@ -1,5 +1,9 @@
-As **hexing** is considered the process of modifying raw contents of a file on byte-level with a [hex
-editor](Hex_Editor "wikilink"), regardless of the actual purpose of the file (text, image or another application). Such
+!!! warning
+    This page is outdated and incomplete. If you have the knowledge about it, consider [contributting](../contributing/editing-the-docs.md) to this page.
+
+
+As **hexing** is considered the process of modifying raw contents of a file on byte-level with a
+[hex editor](./hex-editor.md), regardless of the actual purpose of the file (text, image or another application). Such
 modifications may require exact knowledge of the files' format for the modification to succeed, as opposed to a
 high-level editing application such as an image editor.
 
@@ -10,8 +14,7 @@ add new items or features, to fix bugs and the like. This is also the client, wh
 Although it is possible to use an unmodified client with Hercules (up to 2010/08/04), it is typically modified using a
 DIFF patcher.
 
-Each new client requires [Wee Diff Gen plugin/Shins Diff
-Patcher](https://herc.ws/board/topic/827-weediff-aka-shins-diff-patcher-weediffgen-continuation/) OR
+Each new client requires [Wee Diff Gen plugin/Shins Diff Patcher](https://herc.ws/board/topic/827-weediff-aka-shins-diff-patcher-weediffgen-continuation/) OR
 [xDiffPatcher](https://herc.ws/board/topic/852-xdiffpatcher-xdiffgen2-packet-parser-and-packet-extractor/).
 
 ### Diffing your client
@@ -54,25 +57,11 @@ Steps:
 2.  Start your client in Windowed mode to check.
 3.  After closing the client, load it inside the hex editor.
 4.  When the file loads, it should look something like this:  
-    <center>
-
-    <figure>
-    <img src="Hxd-main.png" title="Editing a ragexeRE with HxD" />
-    <figcaption>Editing a ragexeRE with HxD</figcaption>
-    </figure>
-
-    </center>
+    <center>![Editing a RagexeRE with HxD](assets/hxd_main.png)</center>
 5.  Press **Ctrl+F** to open the Find window and input the window title. As the window title is usually stored at the
     beginning of the hexed client, a partial title will do.
 6.  When you find the section, it will look something like this:  
-    <center>
-
-    <figure>
-    <img src="Hxd-custtitle.png" title="Current Window Title" />
-    <figcaption>Current Window Title</figcaption>
-    </figure>
-
-    </center>
+    <center>![Current window title](assets/hxd_custom_title.png)</center>
 7.  Now, on the **right** side (ASCII text), start where the current Window Title starts and begin overwriting it with
     your NEW window title.
 8.  If there are leftover words after you have typed your NEW window title, switch to the **left** side (Hexadecimal)
@@ -81,14 +70,14 @@ Steps:
 
 #### Custom data.ini
 
-You can rename the [DATA.INI](DATA.INI "wikilink") file to any name that is 8 characters long (including the extension).
+You can rename the [DATA.INI](./data-ini.md) file to any name that is 8 characters long (including the extension).
 Then, just edit your client with a Hex Editor. Find DATA.INI and replace with your new filename.
 
 #### Custom clientinfo.xml
 
-You can rename the [clientinfo.xml](clientinfo.xml "wikilink") file to any name that is 15 characters long (including
+You can rename the [clientinfo.xml](./clientinfo.md) file to any name that is 15 characters long (including
 the extension). Then, just edit your client with a Hex Editor. Find clientinfo.xml and replace with your new filename.
-Note, that for newer and non-[sakray](sakray "wikilink") clients, this file is called clientinfo.xml.
+Note, that for newer and non-[sakray](../basics/sakray.md) clients, this file is called clientinfo.xml.
 
 ## Find-Replace Hexing
 
@@ -106,8 +95,9 @@ certain client versions[1](http://www.eathena.ws/board/index.php?showtopic=24932
 
 ### Application
 
-<img src="Hxd-findreplace.png" title="Find and replace dialog in HxD, with a hex code ready." width="359"
-alt="Find and replace dialog in HxD, with a hex code ready." />The first one is copied and pasted into hex editor
+<center>![Find and replace dialog in HxD, with a hex code ready.](./assets/hxd_find_replace.png)</center>
+
+The first one is copied and pasted into hex editor
 find/replace window's *find* field, the latter is pasted into the *replace with* field. The search is set to be
 case-sensitive and then all occurrences are replaced.
 
@@ -122,7 +112,7 @@ among clients (both lines). This kind of *wild card* is expressed with:
 
 - XX - more common for adjustable values
 - ?? - is recognized as wild card in some hex editors
-- Description of the bytes in \< \>, such as 3-byte <BBGGRR> for little-endian RGB color values
+- Description of the bytes in `< >`, such as 3-byte `<BBGGRR>` for little-endian RGB color values
 
 Example (vending max. sell price unlocking):
 
@@ -150,7 +140,7 @@ someone without experience in assembly language would be incredibly confused abo
 
 ### Loading the Sakexe
 
-Run *OLLYDBG.EXE* and select menu File \> Open. Then choose the Sakexe you want to Hex. If your Sakexe needs some
+Run *OLLYDBG.EXE* and select menu `File > Open`. Then choose the Sakexe you want to Hex. If your Sakexe needs some
 parameters to launch (ex: 1sak1). Enter that parameter in *Arguments* field. Then press Open Button.
 
 ### Finding WinMain function
@@ -170,12 +160,14 @@ All clients before 2010-08-18aRagexeRE (this includes all Sakexe clients) are co
 WinMain can be found as a CALL after the first CALL to GetModuleHandle. You can find it by a scroll down 10 - 20 lines
 from current position after loading Sakexe.
 
-`PUSH    ESI`  
-`CALL    DWORD PTR DS:[<&KERNEL32.GetModuleHandleA>]`  
-`PUSH    EAX`  
-`CALL    Private.00694780 <--- This is WinMain call.`  
-`MOV     [LOCAL.24],EAX`  
-`PUSH    EAX`
+```ASM
+PUSH    ESI
+CALL    DWORD PTR DS:[<&KERNEL32.GetModuleHandleA>]
+PUSH    EAX
+CALL    Private.00694780 <--- This is WinMain call.
+MOV     [LOCAL.24],EAX
+PUSH    EAX
+```
 
 Pressing Enter when **CALL Private.00694780** is highlighted, will make you to go to the WinMain function.
 
@@ -185,30 +177,34 @@ Newer clients are compiled with Visual C++ 9.0, which is part of Visual Studio 2
 completely different and more complex than the one of the older clients. After loading the client, the position is set
 to a CALL which is followed by a JMP.
 
-`CALL    Private.0074763E`  
-`JMP     Private.00746D24`
+```ASM
+CALL    Private.0074763E
+JMP     Private.00746D24
+```
 
 The CALL is not important, as it only contains compiler specific stuff. Selecting the JMP and pressing Enter will make
 you go the code position, where WinMain is located. Scroll down, until you find a PUSH 400000, which is an equivalent to
 the GetModuleHandle call in older clients. The CALL after it is the WinMain function.
 
-`JMP     SHORT Private.00746E56`  
-`PUSH    0A`  
-`POP     EAX`  
-`PUSH    EAX`  
-`PUSH    ESI`  
-`PUSH    0`  
-`PUSH    400000`  
-`CALL    Private.00745790 <--- This is WinMain call.`  
-`MOV     DWORD PTR DS:[8AE16C],EAX`  
-`CMP     DWORD PTR DS:[8AE160],0`
+```ASM
+JMP     SHORT Private.00746E56
+PUSH    0A
+POP     EAX
+PUSH    EAX
+PUSH    ESI
+PUSH    0
+PUSH    400000
+CALL    Private.00745790 ; <--- This is WinMain call.
+MOV     DWORD PTR DS:[8AE16C],EAX
+CMP     DWORD PTR DS:[8AE160],0
+```
 
 Pressing Enter when **CALL Private.00745790** is highlighted, will make you to go to the WinMain function.
 
 ### Disable some instructions with NOP Instruction
 
 We can disable some instruction with NOP Instruction. By Right Click on the lines you want to replace by NOP. Then,
-Select *Binary \> Fill with NOPs*. You can also replace more one line in once *Fill with NOPs*.
+Select `Binary > Fill with NOPs`. You can also replace more one line in once *Fill with NOPs*.
 
 ### Changing instruction to other instruction
 
@@ -218,16 +214,16 @@ completely make modifications to our Sakexe. Such as changing *jxx* to *jmp*.
 ### Save our changes to Sakexe
 
 All changes in OllyDbg is not affected on our Sakexe until we save these changes. You can *Right Click* on anywhere in
-CPU Window. Then select *Copy to executable \> All modifications*. Dialog *Copy selection to executable file* will
-appear. Press *Copy all* and other window will appear. Right Click on anywhere in this window and select *Save file* and
-*Save file as* dialog will appear. Type desired file name and press *Save* Button. You can overwrite original file.
+CPU Window. Then select `Copy to executable > All modifications`. Dialog `Copy selection to executable file` will
+appear. Press `Copy all` and other window will appear. Right Click on anywhere in this window and select `Save file` and
+`Save file as` dialog will appear. Type desired file name and press `Save` Button. You can overwrite original file.
 OllyDbg will automatically backup our original Sakexe if we choose overwrite original file.
 
 ## See Also
 
-- [Loading Screens](Loading_Screens "wikilink")
-- [DATA.INI](DATA.INI "wikilink")
-- [clientinfo.xml](clientinfo.xml "wikilink")
+- [Loading Screens](./loading-screens.md)
+- [DATA.INI](./data-ini.md)
+- [clientinfo.xml](./clientinfo.md)
 
 ## External Links
 
@@ -236,4 +232,3 @@ OllyDbg will automatically backup our original Sakexe if we choose overwrite ori
 - [7zip](http://www.7-zip.org/download.html)
 - [Weetools Repository](http://subversion.assembla.com/svn/weetools/)
 
-[Category:Client Configuration](Category:Client_Configuration "wikilink")

@@ -1,72 +1,81 @@
-A text table format used for the [Ragnarok Online](Ragnarok_Online "wikilink") client. It is used for organizing text
+# Token Text Table
+
+A text table format used for the [Ragnarok Online](https://en.wikipedia.org/wiki/Ragnarok_Online) client. It is used for organizing text
 data into columns and rows, mostly for id-description relations. It usually has the file extension **.txt** and can be
-found inside and outside the [GRF](GRF "wikilink").
+found inside and outside the [GRF](./grf.md).
 
 ## File Format
 
 The files are plain text files, where rows and columns are separated by the token character
-[\#](https://en.wikipedia.org/wiki/Hash_symbol). It can be edited with every text editor like Notepad. Make sure, that the file
+[#](https://en.wikipedia.org/wiki/Hash_symbol). It can be edited with every text editor like Notepad. Make sure, that the file
 is not stored in [Unicode](https://en.wikipedia.org/wiki/Unicode) or [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
 
 The amount of columns is fixed for each file, that uses this file format. Rows are either limited by available memory or
 by hard-coded limits, as seen below. Note that all of these limits can be lifted by hexing the client. Whether line
-breaks are allowed within a cell or not depends on each file as well. Multi-line cells support using \# character inside
-the text, as long it is followed by a **space character**. Contrary to that, all other \# characters must be followed by
+breaks are allowed within a cell or not depends on each file as well. Multi-line cells support using `#` character inside
+the text, as long it is followed by a **space character**. Contrary to that, all other `#` characters must be followed by
 either a new line or a non-spacing character.
 
 ### Examples
 
 1-column table (CardPostfixNameTable)
 
-    4039#
-    4041#
-    4042#
-    4046#
-    4050#
+```
+4039#
+4041#
+4042#
+4046#
+4050#
+```
 
 1-column table multi-line (TipOfTheDay)
-
-    /savechat : saves chat as text file.
-    #
-    You can select a type of mini-map using ctrl+[*],between transparency and opacity.
-    #
-    You can change the view of character with dragging a mouse while holding right button and pressing shift key.
-       Double clicking right button on a mouse enables to return the view to default one.
-    #
+```
+/savechat : saves chat as text file.
+#
+You can select a type of mini-map using ctrl+[*],between transparency and opacity.
+#
+You can change the view of character with dragging a mouse while holding right button and pressing shift key.
+    Double clicking right button on a mouse enables to return the view to default one.
+#
+```
 
 2-column table (IdNum2ItemDisplayNameTable)
-
-    512#Apple#
-    513#Banana#
-    514#Grape#
+```
+512#Apple#
+513#Banana#
+514#Grape#
+```
 
 2-column multi-line table (IdNum2ItemDescTable)
-
-    1071#
-    A test tube that contains some sort of unidentified fluid.
-    ^ffffff_^000000
-    Weight :^777777 3^000000
-    #
-    1072#
-    It's a personal letter written by Mahnsoo, chief of the Merchant Guild.
-    ^ffffff_^000000
-    Weight :^777777 1^000000
-    #
-    1073#
-    A delivery voucher with the serial number # 2485741
-    ^ffffff_^000000
-    Weight :^777777 1^000000
-    #
+```
+1071#
+A test tube that contains some sort of unidentified fluid.
+^ffffff_^000000
+Weight :^777777 3^000000
+#
+1072#
+It's a personal letter written by Mahnsoo, chief of the Merchant Guild.
+^ffffff_^000000
+Weight :^777777 1^000000
+#
+1073#
+A delivery voucher with the serial number # 2485741
+^ffffff_^000000
+Weight :^777777 1^000000
+#
+```
 
 ### Comments
 
-You may insert comments inside the file by putting **//** at the beginning of a line. The comment then spans to the end
+You may insert comments inside the file by putting `//` at the beginning of a line. The comment then spans to the end
 of that line. Trailing comments (not starting at beginning of a line) will not work. Example:
 
-    row1#
-    // Disabled because it does not work
-    // row2#
-    row3#
+```
+row1#
+// Disabled because it does not work
+// row2#
+row3#
+```
 
 ### Known Row Limits
 

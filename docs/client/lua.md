@@ -1,6 +1,8 @@
-# Lua Background Information
+# Lua
 
-## What is Lua?
+## Lua Background Information
+
+### What is Lua?
 
 Lua is a powerful, fast, lightweight, embeddable scripting language.
 
@@ -9,13 +11,13 @@ extensible semantics. Lua is dynamically typed, runs by interpreting bytecode fo
 has automatic memory management with incremental garbage collection, making it ideal for configuration, scripting, and
 rapid prototyping.
 
-## Where does Lua come from?
+### Where does Lua come from?
 
 Lua is designed, implemented, and maintained by a team at PUC-Rio, the Pontifical Catholic University of Rio de Janeiro
 in Brazil. Lua was born and raised in Tecgraf, the Computer Graphics Technology Group of PUC-Rio, and is now housed at
 Lablua. Both Tecgraf and Lablua are laboratories of the Department of Computer Science of PUC-Rio.
 
-## What does Lua stand for?
+### What does Lua stand for?
 
 "Lua" (pronounced LOO-ah) means "Moon" in Portuguese. As such, it is neither an acronym nor an abbreviation, but a noun.
 More specifically, "Lua" is a name, the name of the Earth's moon and the name of the language. Like most names, it
@@ -23,9 +25,7 @@ should be written in lower case with an initial capital, that is, "Lua". Please 
 ugly and confusing, because then it becomes an acronym with different meanings for different people. So, please, write
 "Lua" right!
 
-# Lua and RO
-
-## What's it used for?
+## Lua and RO
 
 ### The client itself
 
@@ -52,15 +52,16 @@ If you're using Lua files from Gravity, chances are your files are encoded. When
 
 Lots and lots of ASCII characters depending on what kind of editor you use:  
 Notepad  
-![](Accname.lub-notepad.png "Accname.lub-notepad.png")  
+![](assets/accname_lub_in_notepad.png)
+
 [Notepad++](http://notepad-plus-plus.org/)  
-![](Accname.lub-notepadpp.png "Accname.lub-notepadpp.png")
+![](assets/accname_lub_in_notepadplusplus.png)
 
 #### English
 
 You'll notice some English words that you may find familiar, be it headgear names, job classes, NPC sprites etc. You can
 manipulate this data to directly affect the client. The most popular reasons for editing the Lua files is to create
-[Custom Items](Custom_Items#View_IDs.2C_Having_A_Custom_Item_Without_Xray "wikilink")
+[Custom Items](../customization/custom-items.md).
 
 ### Client-side un-gibberish
 
@@ -79,4 +80,4 @@ today none have been completed.
 - [Official Lua Scripting Language Homepage](http://www.lua.org/)
 - [Lua_Project](http://subversion.assembla.com/svn/ClientSide/Lua_Project/)
 
-[:Category:Customization](:Category:Customization "wikilink")
+<!-- [:Category:Customization](:Category:Customization "wikilink") -->

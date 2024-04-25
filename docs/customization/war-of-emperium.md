@@ -8,7 +8,7 @@ Open
 [`npc/guild/agit_controller.txt`](https://github.com/HerculesWS/Hercules/blob/stable/npc/guild/agit_controller.txt)  
 The body of the script should look similar to the following:
 
-```C
+```HercScript
 -	script	Agit_Event	FAKE_NPC,{
 	end;
 

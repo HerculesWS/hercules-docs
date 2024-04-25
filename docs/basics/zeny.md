@@ -43,7 +43,7 @@ setting `vending_over_max` in
 The name `Zeny` is recognized by the script engine as a [parameter constant](../scripting/parameter-constant.md), which
 affects the amount of Zeny of the [currently attached](./rid.md#usage) player. It can be both read and written.
 
-```C
+```HercScript
 Zeny += 120; // gives the player 120z
 mesf("Your current balance is %dz.", Zeny);
 Zeny = 0; // takes all Zeny from the player

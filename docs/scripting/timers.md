@@ -15,7 +15,7 @@ lines.
 Here's an example of it in proccess.  
 We'll take this apart after we look at it.
 
-```C
+```HercScript
 prontera,23,20,2	script	Non-spamming-NPC-Talker	1_M_JOBGUIDER,{
 	end;
 
@@ -49,7 +49,7 @@ We'll start with "OnInit:".
 Q: What is "OnInit:"?  
 A: "OnInit:" is the commands you wish the NPC to execute right after the NPC is loaded.
 
-```C
+```HercScript
 OnInit:
 	$GlobalVariable = 10;
 	end;
@@ -67,7 +67,7 @@ has ended.
 
 **If you do not end the "On" label with "end;", horrible things will happen, such as running through other labels.**
 
-```C
+```HercScript
 OnInit:
 	$GlobalVariable = 10;
 
@@ -84,7 +84,7 @@ Note: Sometimes this is usefull too...
 
 Example:
 
-```C
+```HercScript
 // ...
 
 OnClock2100:
@@ -104,7 +104,7 @@ This Script will run at 21:00 AND at 23:00 (c&p from the woe-starting-script)
 Delayed warping is a feature you can put in your script to add more drama, or to automatically warp someone from a room
 when the player has exceeded the allotted time for being there. Here is an example of a delayed warp:
 
-```C
+```HercScript
 prontera,23,20,2	script	Bomb Squad	1_M_JOBGUIDER,{
 	mes("[Dismantler]");
 	mes("Where is the bomb? WHERE IS IT??");
@@ -144,7 +144,7 @@ However, the script will keep on running in the background, after the close butt
 presses the close button, it continues with the next line. For you lazy bums, here is an outtake of the script to
 prevent your scrolling finger from getting tired.
 
-```C
+```HercScript
 	addtimer(15000, "Bomb Squad::OnWarn");
 	addtimer(30000, "Bomb Squad::OnBoom");
 	dispbottom("Dismantler : The bomb will detonate in 30 seconds!");
@@ -167,7 +167,7 @@ need to manipulate the player later on, we need the script to remember the RID.
   
 Anyway, after 15 seconds, if the player hasn't logged out, the script will restart at the following point:
 
-```C
+```HercScript
 OnWarn:
 	dispbottom("Dismantler : OH MY GOD! ONLY 15 SECONDS LEFT - HURRY!!!!");
 	end;
@@ -176,7 +176,7 @@ OnWarn:
 What it does here, is another text display in the chat of the player, and then end the script again. So, we wait, and we
 wait, and then, after another 15 seconds, the second timer triggers the label OnBoom:, and starts this piece of code:
 
-```C
+```HercScript
 OnBoom:
 	dispbottom("*time slows down as suddenly the ticking stops*");
 	dispbottom("....");
@@ -203,7 +203,7 @@ addtimer command, as they both behave the same.
 
 so the Bomb Squad npc script now look like this
 
-```C
+```HercScript
 prontera,155,188,2	script	Bomb Squad	1_M_JOBGUIDER,{
 	mes("[Dismantler]");
 	mes("Where is the bomb? WHERE IS IT??");
@@ -241,7 +241,7 @@ see the player variable boom set back to 0 with "[set](./commands/set.md) @boom,
   
 Now, on to the bomb npc.
 
-```C
+```HercScript
 prontera,50,50,2	script	Bomb	HIDDEN_NPC,{
 	if (@boom == 0)
 		end;
@@ -272,7 +272,7 @@ and recompile your server.
 
 Let's start with another example:
 
-```C
+```HercScript
 prontera,23,20,2	script	Daily Healer	1_M_JOBGUIDER,{
 	mes("[Healer]");
 	mes("Hello there.");
@@ -311,7 +311,7 @@ A: That is correct. This NPC uses what I would like to call a Static Timer. We w
 Ok, at a first glance, this is a normal healer NPC that fully heals your HP and SP. The interesting part though is at
 the bottom. Let's start with the bottom most part:
 
-```C
+```HercScript
 	close2();
 	percentheal(100, 100);
 	TimeHealed = gettimetick(GETTIMETICK_UNIXTIME);
@@ -322,7 +322,7 @@ the bottom. Let's start with the bottom most part:
 The NPC does the healing here, but after the healing, it sets a weird value to TimeHealed. First, it gets a value from
 `gettimetick(GETTIMETICK_UNIXTIME)`. This command returns the amount of seconds elapsed since 1/1/1970, based on your server current time.
 
-```C
+```HercScript
 	if (TimeHealed + 86400 > gettimetick (GETTIMETICK_UNIXTIME)) {
 ```
 
@@ -340,7 +340,7 @@ making it dynamic means.
   
 By turning that numbers into a Global variable,
 
-```c
+```HercScript
 	if ((TimeHealed + $HealInterval) > Gettimetick(GETTIMETICK_UNIXTIME)) {
 ```
 
@@ -397,7 +397,7 @@ How they work? Relatively easy. OnClock is already explained in the first part o
 case you forgot. To make it work, you replace XXXX by an actual time in the 24 hour format. The time you put there, is
 when the label is triggered. So, for example:
 
-```C
+```HercScript
 OnClock0700: // This label is triggered at 7 AM servertime.
 OnClock1414: // This label is triggered at 2:14 PM servertime.
 ```
@@ -409,7 +409,7 @@ month, the second XX is the day of that month. When it is that day, it will be t
 only once at the start of that day, or the first time that your server is up during that day. Here are a couple of
 examples:
 
-```C
+```HercScript
 OnDay0101: // This label is triggered on the first day of January.
 OnDay0515: // This one is triggered on the fifteenth day of May.
 OnDay1231: // This one is triggered on the last day of December.
@@ -420,7 +420,7 @@ OnDay0229: // This label is only triggered when it is February 29th,�
 OnHourXX and OnMinuteXX are similar in use. With OnHour, the XX stands for a specific hour during the day when it is
 triggered. The XX within OnMinute stands for a specific minute per hour. Some examples to make it clear:
 
-```C
+```HercScript
 OnHour01: // Triggers at 1 AM every day.
 OnHour20: // Triggers at 8 PM every day.
 OnMinute00: // Triggers at each new hour, so 1:00, 2:00, 3:00, 4:00 etc.
@@ -433,7 +433,7 @@ replaced by a number in the same way as the XXXX in OnClockXXXX. It notes a spec
 triggered on the specified day of the week (SSS) at the specified time in 24 hour format (XXXX). At least, that is the
 theory. Here are some examples you can work with:
 
-```C
+```HercScript
 OnSat1200: // Triggers at noon on each Saturday.
 OnTue0707: // Triggers at 7 past 7 AM on Tuesday.
 ```
@@ -443,7 +443,7 @@ Note: Although there is no OnSecondXX or OnMillisecondXXXX label, you can simula
 heavy load on your server. To do this, you will have to use a NPC. Here is a short example simulating OnSecond30 using a
 NPC timer:
 
-```C
+```HercScript
 -	script	Annoying Announcer	FAKE_NPC,{
 OnInit:
 	initnpctimer();
@@ -460,7 +460,7 @@ OnTimer1000:
 
 And one that triggers every 40 milliseconds:
 
-```C
+```HercScript
 -	script	Flooder	FAKE_NPC,{
 OnInit:
 	initnpctimer();
@@ -492,7 +492,7 @@ There are many more of these kinds of special event triggered labels, like the l
 exception of OnTimerX, are all triggered without the need of a player. With OnTimerX, the X should be replaced by a time
 in milliseconds, for example:
 
-```C
+```HercScript
 OnTimer100: // Triggers 100ms after a player timer or NPC timer is started in the same NPC.
 OnTimer3600000: // Triggers 1 hour after a player timer or NPC timer is started in the same NPC.
 ```
@@ -553,7 +553,7 @@ online, the player's RID will be set equal to his account ID (`getcharid(CHAR_ID
   
 Some examples:
 
-```C
+```HercScript
 initnpctimer(); // Start a new NPC timer and make it count from 0.
 initnpctimer("My Other NPC"); // Start a new NPC timer in the NPC named "My Other NPC" and make it count from 0.
 
@@ -571,7 +571,7 @@ this command. If you like you can read `continuenpctimer` instead of `startnpcti
 Again, for the various options, you might want to look at `InitNPCTimer`. We will just show
 some examples here:  
 
-```C
+```HercScript
 startnpctimer(); // Continues the NPC timer where it left off, or start a new one if there isn't a timer already.
 
 startnpctimer("My Other NPC"); // Same as above, but starts it in the NPC named "My Other NPC".
@@ -588,7 +588,7 @@ ignored), then **stopnpctimer** will also detach the player, if any was attached
   
 Some examples again:
 
-```C
+```HercScript
 stopnpctimer(); // Pauses the NPC timer in the current NPC.
 stopnpctimer("My Other NPC"); // Pauses the NPC timer in the NPC named "My Other NPC"
 stopnpctimer(1); // Pauses the NPC timer in the current NPC and detaches any attached player.
@@ -622,7 +622,7 @@ attached, or it will give you back an error and return 0.
   
 Some examples:
 
-```C
+```HercScript
 getnpctimer(0); // Returns the current amount of ticks.
 getnpctimer(0,"My Other NPC"); // Does the same, only for the NPC named "My Other NPC".
 getnpctimer(1); // Returns the amount of OnTimer labels that are still untriggered.
@@ -646,7 +646,7 @@ there is to this command. It works, no matter if there is a player attached to i
   
 Some examples again:
 
-```C
+```HercScript
 setnpctimer(10000); // Sets the NPC Timer of the current NPC to 10 seconds.
 setnpctimer(2345, "My Other NPC"); // Sets the NPC Timer in the NPC named "My Other NPC" to 2345 ticks or ms.
 setnpctimer(0); // Sets the current NPC Timer to 0.
@@ -667,7 +667,7 @@ his account id or RID (or UID/GID in some devs words) as a parameter.
   
 Examples:
 
-```C
+```HercScript
 attachnpctimer(getcharid(3)); // Attaches current player to the NPC Timer.`  
 attachnpctimer(2000000); // Attaches the player with account id 2000000 to the NPC Timer, if he is online.`
 ```
@@ -680,7 +680,7 @@ parameter. This is optional of course.
   
 Examples:
 
-```C
+```HercScript
 detachnpctimer(); // Detaches the attached player from the NPC Timer, if anyone was attached.`  
 detachnpctimer("My Other NPC"); // Does the same, only for the NPC named "My Other NPC".`
 ```
@@ -737,7 +737,7 @@ timer runs down to 0, it will jump to that label in that NPC. For easiness sake,
 the command, and the upcoming commands, also the name of the player timer.  
 Well, that is all there is to the addtimer command, so some last examples:
 
-```C
+```HercScript
 addtimer(1000, "My NPC::OnMyLabel"); // Starts a timer that runs out after 1000 ms (1 second), and then jumps to OnMyLabel in My NPC.
 addtimer(60000, "NPC1::OnLoser"); // After 60 seconds, this timer runs out, and jumps to OnLoser in the NPC named NPC1.
 ```
@@ -750,7 +750,7 @@ which timer it does this, is up to you and the player who is currently attached 
 alter, is what you specify with the second parameter, "NPC::OnEvent" (or as said earlier, the name of the timer).  
 Some examples:
 
-```C
+```HercScript
 addtimercount(5000, "My NPC::OnMyLabel"); // Adds 5 seconds to the timer with the name "My NPC::OnMyLabel".
 addtimercount(-10000, "NPC1::OnLoser"); // Removes 10 seconds from the timer with the name "NPC1::OnLoser".
 ```
@@ -762,7 +762,7 @@ the same event label/name as specified in the parameter. Of course, it only does
 is currently attached to the script, but well, that is all it does.  
 Some examples:
 
-```C
+```HercScript
 deltimer("My NPC::OnMyLabel"); // Erases the timer that was supposed to jump to OnMyLabel in the NPC named My NPC.
 deltimer("NPC1::OnLoser"); // Erases the timer named NPC1::OnLoser. (Name == Event label)
 ```

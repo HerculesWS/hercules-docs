@@ -97,7 +97,7 @@ or
 
 Examples:
 
-```C
+```HercScript
 set(var, 5); // Setting a permanent integer player variable to 5.
 set($var$, "Hello"); // Setting a global string variable to "Hello".
 set(.@var[5], 10); // Setting the sixth element (5 + 1) of the temporal integer NPC variable to 10.
@@ -105,7 +105,7 @@ set(#var, #var * 2); // Multiplying the value that is in #var by 2�
 ```
 
 or
-```C
+```HercScript
 var = 5; // Setting a permanent integer player variable to 5.
 $var$ = "Hello"; // Setting a global string variable to "Hello".
 .@var[5] = 10; // Setting the sixth element (5 + 1) of the temporal integer NPC variable to 10.
@@ -115,21 +115,21 @@ $var$ = "Hello"; // Setting a global string variable to "Hello".
 You can also unset a variable, which is not needed per se, but saves memory. To unset an integer value, you need to
 store 0 in it, so like this:
 
-```C
+```HercScript
 set var, 0;
 var = 0;
 ```
 
 To unset a string variable, you will have to set the variable to "". (An empty string.) Another example:
 
-```C
+```HercScript
 set @var$, "";
 @var$ = "";
 ```
 
 Other possible examples
 
-```C
+```HercScript
 @i = 1;
 @i++;
 @i *= 2;
@@ -162,13 +162,13 @@ multiple values, or cleaning them. These are the Array related commands.
 
 To quickly set multiple values in an array, you need to use setarray. It will look like this:
 
-```C
+```HercScript
 setarray(@array[0],100,200,300);
 ```
 
 This will result in this:
 
-```C
+```HercScript
 @array[0] == 100;
 @array[1] == 200;
 @array[2] == 300;
@@ -177,33 +177,33 @@ This will result in this:
 `deletearray` is used to quickly erase a specified amount of elements of an array. It can also be used to completely unset
 it.
 
-```C
+```HercScript
 deletearray(@array[0], 1); // Deletes element 0 of the array, and moves every other entry up.
 ```
 
 Result using the previous array:
 
-```C
+```HercScript
 @array[0] == 200;
 @array[1] == 300;
 ```
 
 To completely erase an array using this command, you can do this:
 
-```C
+```HercScript
 deletearray(@array[0]);
 ```
 
 Another way to quickly set or unset an array is the cleararray command. Cleararray is actually better than setarray if
 you want to fill an array with the same values, like this:
 
-```C
+```HercScript
 cleararray(@array[0], 100, 57);
 ```
 
 The result is this:
 
-```C
+```HercScript
 @array[0] == 100;
 @array[1] == 100;
 // ...
@@ -212,13 +212,13 @@ The result is this:
 
 Taking the previous @array as example variable, to clear it partially, you can use the command in this way:
 
-```C
+```HercScript
 cleararray(@array[1], 0, 8);
 ```
 
 Please note, that unlike `deletearray`, it will not shift the remaining values. The result will be this:
 
-```C
+```HercScript
 @array[0], @array[9] ~ @array[56] == 100;
 @array[1] ~ @array[8] == 0;
 ```
@@ -230,14 +230,14 @@ Please note, that unlike `deletearray`, it will not shift the remaining values. 
 Storing and unsetting variables is one thing. Reading them out is something else. Thankfully, it is an easy something
 else. We already actually read out a variable before, at the modifying part:
 
-```C
+```HercScript
 set(#var, #var * 2); // Multiplying the value that is in #var by 2 and store it in #var again.
 ```
 
 As you can see, all you need to do to read out a variable, is only typing the variable name. It works the same for any
 command like the if statement:
 
-```C
+```HercScript
 // If #var contains a value bigger than 2, then show a close button.
 if (#var > 2)
   close();
@@ -245,7 +245,7 @@ if (#var > 2)
 
 If you are using the `mes` command, or another text displaying command, it works a bit differently:
 
-```C
+```HercScript
 mes(#var + ""); // Will display a line with only the value of #var.
 mes("You have killed " + dead_porings + " Porings."); // Will display this: "You have killed <value of dead_porings> Porings."
 mes(@name$); // If @name$ contains "[Kafra]", it will display "[Kafra]"
@@ -266,7 +266,7 @@ and set to 0 is said to be "undeclared".
 
 To do so, you do:
 
-```C
+```HercScript
 // this will check if 'foo' has been declared or not. If the value 'foo'
 // holds is different from 0 (declared), it will return true. Otherwise it 
 // will return false.
@@ -302,7 +302,7 @@ Note : ! doesn't support string variable
 To read out a value of an array, you will have to specify which element of the array you want to see. Let's say, we have
 the following array:
 
-```C
+```HercScript
 @array[0] == 41;
 @array[1] == 12;
 @array[2] == 54;
@@ -314,7 +314,7 @@ the following array:
 
 And we have the following script:
 
-```C
+```HercScript
 mes("[Lotto]");
 mes("And today's numbers are:");
 mes(@array[0]+", "+@array[1]+", "+@array[2]+", "+@array[3]+", "+@array[4]+" and "+@array[5]+".");
@@ -369,7 +369,7 @@ warper for it, then you want the warper to do nothing, until a GM starts hosting
 to automatically be closed when the server crashes or reboots. This will prevent any players to go to the event before
 the GM is online. Here is how you could code such a simple warper:
 
-```C
+```HercScript
 prontera,147,177,7	script	Event Warper	4_F_KAFRA2,{
 	if (getgmlevel() >= 60) {
 		goto L_GMMenu; // If the player is a GM, go to the GM Menu.
@@ -486,7 +486,7 @@ Global account variables are useful when you use a voting NPC. If you want it so
 and you have multiple mapservers, then you want all the other mapservers to know if an account has already voted or not.
 This will prevent a certain account to vote more than once. The script below is an example of such a voting NPC.
 
-```C
+```HercScript
 prontera,147,177,7	script	Poll	4_F_KAFRA2,{
 	if (##AlreadyVoted) { // Account has already voted on a mapserver.
 		mes("These are the current results:");
@@ -547,7 +547,7 @@ used. Also, even if you have multiple mapservers, then you might want to allow p
 mapserver, so that they can have the reward(s) on all the mapservers. To keep it easy, here is the voting NPC again,
 only with normal account variables.
 
-```C
+```HercScript
 prontera,147,177,7	script	Poll	4_F_KAFRA2,{
 	if (#AlreadyVoted) { // Account has already voted on a current map-server.
 		mes("These are the current results:");
@@ -604,7 +604,7 @@ Player variables have no prefix
 A simple example of the usage of a permanent player variable, is a one time freebee giver. After the freebee has been
 given, the variable is set and when the player talks to the NPC again, it will check for this and denies access.
 
-```C
+```HercScript
 prontera,147,177,7	script	Freebee Giver	4_F_KAFRA2,{
 	if (GotFreebee) { // If the permanent player variable GotFreebee is not 0, then do what is inside the { }.
 		mes("You have already gotten the freebee.");
@@ -624,7 +624,7 @@ prontera,147,177,7	script	Freebee Giver	4_F_KAFRA2,{
 An example of using a temporal variable, is an interactive NPC system, responding to a random mood of a player. It can
 look like this:
 
-```C
+```HercScript
 -	script	mood	FAKE_NPC,{
 OnPCLoginEvent:
 	@mood = rand(3); // 0 == happy, 1 == sad, 2 == grumpy, 3 == in love.
@@ -700,7 +700,7 @@ The prefix for a NPC variable is .
 Temporal NPC variables are widely used to temporary save a value. This can make customizing your script easier. For
 example, you can store the NPC name in a temporal NPC variable, like shown in the script beneath:
 
-```C
+```HercScript
 prontera,147,177,7	script	Random Person	4_F_KAFRA2,{
 	.@name$ = "^FF0000"; // Setting the color, red in this case.
 	.@name$ = .@name$ + "Sir Eduard"; // Setting the name of the NPC
@@ -726,7 +726,7 @@ changed in the first line.
 
 A short example of a permanent variable might be this 'logging' NPC:
 
-```C
+```HercScript
 prontera,147,177,7	script	Random Person	4_F_KAFRA2,{
 	mes("Hello!");
 	mes("Do you have any gossip?");
@@ -780,7 +780,7 @@ Guild Variables do not exist, and since an array is limited upto 128 elements, i
 storage. Yet it can be needed to store guild variables, when you want to do a ranking of some sort. The following
 example is a snippet from gldfunc_ev_agit.txt, and stores the amount of times a guild has captured a castle.
 
-```C
+```HercScript
 .@NameOfGuildVar$ = sprintf("$CastCapt%d", getcharid(CHAR_ID_GUILD));
 // If your guild ID would be 204, the contents of .@NameOfGuildVar$ would be: "$CastCapt204"
 .@Score = getd(.@NameOfGuildVar$); // Retrieve the current score.
@@ -789,7 +789,7 @@ setd(.@NameOfGuildVar$, .@Score); // Put in the new score.
 ```
 
 or you can just
-```C
+```HercScript
 setd(sprintf("$CastCapt%d", getcharid(CHAR_ID_GUILD)), getd(sprintf("$CastCapt%d", getcharid(CHAR_ID_GUILD))) + 1);
 ```
 
@@ -801,7 +801,7 @@ Now, let's say you know your stuff, and really are used to using arrays. Then yo
 multi-dimensional arrays. This snippet will use the for command. If you do not know how to use it, it is best to skip
 this example.
 
-```C
+```HercScript
 // Example of iterating the 3-dimensional array $@array[100,100,100].
 freeloop(true);
 for (.@i = 0; .@i < 100; .@i++) {
@@ -830,7 +830,7 @@ It's uses can vary, but from what I've seen until now is that it is mainly used 
 in a global temporal unlocking quest. To sync a variable NPC with the value of a variable of another NPC, you could use
 this line:
 
-```C
+```HercScript
 .v = getvariableofnpc(.var, "A NPC");
 // Retreives value of .var of the NPC called "A NPC"
 // and puts the found value in .v of this NPC.
@@ -838,7 +838,7 @@ this line:
 
 A global temporal unlocking quest can be like this:
 
-```C
+```HercScript
 prontera,147,177,7	script	PvP Warper	4_F_KAFRA2,{
 	if (getvariableofnpc(.unlocked, "PvP Unlocker")) {
 		mes("Want to go to the PvP room?");
@@ -949,7 +949,7 @@ are possible, as they are declare as 2 different variables.
 
 Some examples of good and bad names. Good:
 
-```C
+```HercScript
 $CTF_Winner$ // Winner of capture the flag
 $CTF_Loser$ // Loser of capture the flag
 $GQ_Winner$ // Winner of capture the flag
@@ -960,7 +960,7 @@ $GQ_Winner$ // Winner of capture the flag
 
 Bad:
 
-```C
+```HercScript
 @Zeny // Zeny is a reserved name.
 rand // Rand is a command.
 @h-uy // - is an arithmetic operator, not allowed.
@@ -1022,7 +1022,7 @@ didn't make any typos, and it should be fixed.
 
 Examples of what can cause this error:
 
-```C
+```HercScript
 if (.@value == .@name$) // Will error, because .@value is an Integer. .@name$ is a String.
 .@value = "Blaat"; // Might error, because .@value is an Integer. "Blaat" is a String.
 ```
@@ -1038,7 +1038,7 @@ name.
 If there is no way for you to have an RID attached, then it means that you are using the wrong variables. The following
 example demonstrates this:
 
-```C
+```HercScript
 OnInit: // Runs when the server starts
    StartUpTime = gettimetick(2); // This will give the no RID attached error.
    end;
@@ -1053,7 +1053,7 @@ to this is to change `StartUpTime` into `.StartUpTime`, `$StartUpTime` or `$@Sta
 This is a common mistake, but not a real error as detected by the mapserver. This problem can occur when using
 attachrid. Let's take the following snippet taken from an OnPCKillEvent as example:
 
-```C
+```HercScript
 Killer$ = strcharinfo(0); // Setting Killers Name in Killer$
 attachrid(killedrid); // Attach to the person who got killed.
 dispbottom(sprintf("You were killed by %s", Killer$));
@@ -1076,7 +1076,7 @@ A: Use the NPC variable -> `.@var`.
 
 Also a common error with new scripters. Take the following snippet:
 
-```C
+```HercScript
 @name$ = Patrick;
 ```
 

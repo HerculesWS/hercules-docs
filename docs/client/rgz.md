@@ -1,4 +1,6 @@
-An RGZ file is a proprietary compressed archive format used for [Ragnarok Online](Ragnarok_Online "wikilink"), developed
+# RGZ
+
+An RGZ file is a proprietary compressed archive format used for [Ragnarok Online](https://en.wikipedia.org/wiki/Ragnarok_Online), developed
 by [Gravity](http://en.wikipedia.org/wiki/Gravity_(company)). It is used for patching the local file system directory,
 the game client resides in. The archive mostly contains updated game executable or new background music files. The
 extension is always **.rgz** and might be an abbreviation for **ragnarok+gzip**.
@@ -42,52 +44,49 @@ entry is always **end**.
 
 ### Hex Workshop Definition File (ragnarok.hsl)
 
-`/********************`  
-`* `  
-`* Ragnarok Resource files to view and edit`  
-`*`  
-`*/`  
-  
-`#include "standard-types.hsl"`  
-  
-`#pragma displayname("Ragnarok GZip") ;`  
-`#pragma fileextensions(".rgz") ;`  
-  
-`#pragma byteorder(little_endian) `  
-`//#pragma maxarray(65536)`  
-`#pragma hide()`  
-  
-`struct FILESTRUCT`  
-`{`  
-` BYTE type;`  
-` `  
-` struct tagFILENAME`  
-` {`  
-`  BYTE length;`  
-`  char string[length];`  
-` };`  
-` `  
-` switch (type)`  
-` {`  
-`  case 0x66:`  
-`   struct FILECONTENTS`  
-`   {`  
-`    DWORD length;`  
-`    blob  contents[length];`  
-`   };`  
-`   break;`  
-`  default:`  
-`  `  
-`   break;`  
-` };`  
-` `  
-`};`  
-`#pragma show()`  
-  
-`struct files`  
-`{`  
-` struct FILESTRUCT entries[256];`  
-`};`
+```C
+/********************
+* 
+* Ragnarok Resource files to view and edit
+*
+*/
+#include "standard-types.hsl"
+#pragma displayname("Ragnarok GZip") ;
+#pragma fileextensions(".rgz") ;
+#pragma byteorder(little_endian) 
+//#pragma maxarray(65536)
+#pragma hide()
+struct FILESTRUCT
+{
+ BYTE type;
+ 
+ struct tagFILENAME
+ {
+  BYTE length;
+  char string[length];
+ };
+ 
+ switch (type)
+ {
+  case 0x66:
+   struct FILECONTENTS
+   {
+    DWORD length;
+    blob  contents[length];
+   };
+   break;
+  default:
+  
+   break;
+ };
+ 
+};
+#pragma show()
+struct files
+{
+ struct FILESTRUCT entries[256];
+};
+```
 
 ## Tools
 
@@ -97,6 +96,6 @@ entry is always **end**.
 
 ## See Also
 
-- [GRF](GRF "wikilink")
+- [GRF](./grf.md)
 
 [Category:File Formats](Category:File_Formats "wikilink")

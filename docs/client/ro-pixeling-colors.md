@@ -1,3 +1,5 @@
+# RO Pixeling Colors
+
 ## RO Common Colors
 
 There are several color gradients that appears in almost all RO color tables. Those are known as the RO common colors,
@@ -5,10 +7,7 @@ and their use is recommendable for all new spriters (this way they will avoid ma
 
 Those colors are shown in the next image.
 
-<figure>
-<img src="GravityCommonColors.png" title="GravityCommonColors.png" />
-<figcaption>GravityCommonColors.png</figcaption>
-</figure>
+<center>![](assets/ro_common_colors.png)</center>
 
 ## Solid And Neon Colors
 
@@ -27,8 +26,7 @@ colors, like pink, gold and ice blue that appears on some sprites.
 
 ## See Also
 
-- [Spriting](Spriting "wikilink")
-- [Palettes](Palettes "wikilink")
-- [Pixeling](Pixeling "wikilink")
+- [Spriting](./spriting.md)
+- [Palettes](./palettes.md)
 
 [Category:Spriting](Category:Spriting "wikilink")

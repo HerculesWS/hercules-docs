@@ -15,9 +15,15 @@ submit a [Pull request](./creating-pull-requests.md) to the [Hercules-docs repos
 ## Setup
 Hercules docs uses mkdocs-material.
 
-You will need to have Python3 installed and install `mkdocs-material` package.
+You will need to have Python3 installed, and install `mkdocs-material` and our lexer packages.
 
-You can install it with `pip install mkdocs-material` or `pip3 install mkdocs-material`.
+You can install it with:
+```SH
+pip install mkdocs-material
+pip install -e ./hercscript-lexer # Optional, required for HercScript highlighting
+```
+
+or perform the same commands with `pip3`.
 
 For more information about installing mkdocs-material, and other alternatives,
 see [Mkdocs Material's getting started](https://squidfunk.github.io/mkdocs-material/getting-started/#installation)

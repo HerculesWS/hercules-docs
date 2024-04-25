@@ -1,2 +1,4 @@
 /.venv
 /site/
+/hercscript-lexer/hercscript_lexers.egg-info
+/hercscript-lexer/hercscript_lexers/__pycache__

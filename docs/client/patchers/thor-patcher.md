@@ -1,6 +1,8 @@
-[Thor Patcher](Thor_Patcher "wikilink") is designed with the client-side config file embed *inside* the patcher itself.
-Since it uses no extra DLLs, you may distribute 1 file to your players. This guide will not discuss how to setup a [Web
-Server](https://en.wikipedia.org/wiki/Web_Server).
+# Thor Patcher
+
+Thor Patcher is designed with the client-side config file embed *inside* the patcher itself.
+Since it uses no extra DLLs, you may distribute 1 file to your players. This guide will not discuss how to
+setup a [Web Server](https://en.wikipedia.org/wiki/Web_Server).
 
 # Features
 
@@ -61,10 +63,10 @@ A Thor Patcher skin is divided into following parts:
     - Custom Buttons:
 
       
-    see [guide](#Custom_Buttons "wikilink")
+    see [guide](#custom-buttons)
 3.  **Custom Notice Box**:
       
-    see [guide](#Custom_Notice_Box "wikilink")
+    see [guide](#custom-notice-box)
 4.  **Progressbar** (*Shows the patching progress*)
     - Supported formats when use image based progress bar
       - bmp
@@ -441,33 +443,31 @@ If for example, you would like a feed exported from your "News and Announcements
 could easily include a small snippet of php on the page to echo out a few of your latest topics. For example, the
 following code would be sufficient to output the latest 5 topics in your notice.php:
 
+```html+php
 <?php
- $content = file_get_contents('http://mywebsite.com/forums/index.php?/rss/forums/1-announcements/');
- if($content) {
- 	$i = 0;
- 	$xml = new SimpleXmlElement($content);
- 	$newsAmount = (int)5;
- }
- ?>
- &#10; <?php if(isset($xml) && isset($xml->channel)): ?>
- 	<?php foreach($xml->channel->item as $rssItem): ?>
- 		<?php $i++; if($i <= $newsAmount): ?>
- 		<nowiki><div style="padding-left: 20px;"></nowiki>
- 			<nowiki><span><a href="<?php echo $rssItem->link ?>"><?php echo $rssItem->title ?></a></span></nowiki>
- 			<nowiki><p></nowiki>
- 				<?php echo $rssItem->description ?>
- 				<?php echo date('M j, Y', strtotime($rssItem->pubDate)) ?>
- 			<nowiki>
+	$content = file_get_contents('http://mywebsite.com/forums/index.php?/rss/forums/1-announcements/');
+	if ($content) {
+		$i = 0;
+		$xml = new SimpleXmlElement($content);
+		$newsAmount = (int)5;
+	}
+?>
 
-</nowiki>
-
-`   <br />`  
-`  </div>`  
-`  `
-
+<?php if(isset($xml) && isset($xml->channel)): ?>
+	<?php foreach($xml->channel->item as $rssItem): ?>
+		<?php $i++; if($i <= $newsAmount): ?>
+		<div style="padding-left: 20px;">
+			<span><a href="<?php echo $rssItem->link ?>"><?php echo $rssItem->title ?></a></span>
+			<p>
+				<?php echo $rssItem->description ?>
+				<?php echo date('M j, Y', strtotime($rssItem->pubDate)) ?>
+			</p>
+			<br />
+		</div>
+		<?php endif ?>
+	<?php endforeach ?>
 <?php endif ?>
-<?php endforeach ?>
-<?php endif ?>
+```
 
 You will need to ensure that the forum topics you are exporting have an RSS feed being output. If not (in the case of
 IPB especially) you will need to login to the admin panel and create the export feed manually.
@@ -477,19 +477,19 @@ IPB especially) you will need to login to the admin panel and create the export 
 By default, the file containing a list of your uploaded patches is called plist.txt, and is defined in the main.ini file
 situated on your web host. Patches should be defined in sequential number like so:
 
-`...`  
-`15 20131106_newclient.thor`  
-`16 20131106_GM_Fix.thor`  
-`17 20131106_Wings.thor`  
-`... etc`
+```
+...
+15 20131106_newclient.thor
+16 20131106_GM_Fix.thor
+17 20131106_Wings.thor
+... etc
+```
 
 # See Also
 
-- [GRF](GRF "wikilink")
+- [GRF](../grf.md)
 
 ## External Links
 
 - [Official Thor Patcher Homepage](http://thor.aeomin.net/)
 - [Official Thor Patcher Thread](http://www.eathena.ws/board/index.php?showtopic=171632)
-
-[Category:Patchers](Category:Patchers "wikilink")

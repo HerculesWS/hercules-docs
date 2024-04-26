@@ -1,6 +1,8 @@
-To use this guide you must have a basic understanding of [Hercules](Hercules "wikilink"), a [Web
-Server](https://en.wikipedia.org/wiki/Web_Server) and how to edit, upload and manipulate files. You also need to be versatile in
-making [GRF](GRF "wikilink") and [RAR](https://en.wikipedia.org/wiki/RAR_(file_format)) files.
+# NeonCube
+
+To use this guide you must have a basic understanding of [Hercules](../../about/index.md),
+a [Web Server](https://en.wikipedia.org/wiki/Web_Server) and how to edit, upload and manipulate files. You also need to be versatile in
+making [GRF](../grf.md) and [RAR](https://en.wikipedia.org/wiki/RAR_(file_format)) files.
 
 ## Programs you need
 
@@ -40,22 +42,23 @@ There are client and server files that need to be properly setup to work togethe
 8.  Read the examples then edit the values (all lines starting with **;** are comments and can be removed if you want).
 
 Sample **neoncube.ini**
-
-<tt>`[server]`  
-`server_name = YourRO`  
-`notice_url = yourro.com/patcher/index.html`  
-`patch_site = yourro.com`  
-`patch_port = 80`  
-`patch_list = /patcher/patchlist.txt`  
-`patch_folder = /patcher/patch/`  
-`executable = YourRO.exe`  
-`registration_link = http://yourro.com/cp/`  
-`skin = skin_rag`  
-`grf_file = yourro.grf`  
-`Backup_GRF = 1`  
-`startup_option = 3`  
-`[general]`  
-`archive_passphrase =`</tt>
+```ini
+[server]
+server_name = YourRO
+notice_url = yourro.com/patcher/index.html
+patch_site = yourro.com
+patch_port = 80
+patch_list = /patcher/patchlist.txt
+patch_folder = /patcher/patch/
+executable = YourRO.exe
+registration_link = http://yourro.com/cp/
+skin = skin_rag
+grf_file = yourro.grf
+Backup_GRF = 1
+startup_option = 3
+[general]
+archive_passphrase =
+```
 
 NOTES:
 
@@ -69,43 +72,47 @@ this guide.
 
 #### /patcher/index.html
 
-This is the News Page that the patcher will display (supports HTML, PHP, ASP, XML)  
+This is the News Page that the patcher will display (supports HTML, PHP, ASP, XML)
 Create this file on the web server you defined with **notice_url**
 
 #### /patcher/patch/
 
-This is the folder where you will put all the patches you create.  
+This is the folder where you will put all the patches you create.
 Create this folder on the web server you defined with *patch_site*'
 
 #### /patcher/patchlist.txt
 
 This is the file that lists your patches and tells the NeonCube patcher (client) what to download and where to patch
-it.  
+it.
 Create this file on the web server you defined with **patch_site**
 
 Format:
 
-`patch#`<TAB>`destination`<TAB>`patch_name`
+```
+patch#<TAB>destination<TAB>patch_name
+```
 
-patch#  
+patch#
 start with 1, and increment for each new patch
 
-destination  
+destination
 GRF will patch the grf, FLD will extract to folder
 
-patch_name  
+patch_name
 the name of the patch (including file extension, of course)
 
 Sample **patchlist.txt** (take note of the TABs. Comments are allowed)
 
-`//this will extract patch1.gpf into the data folder`  
-`1 FLD patch1.gpf`  
-`//here, patch2.gpf will be mergegd with grf_file`  
-`2 GRF patch2.gpf`  
-`//You can also delete files from the data folder.`  
-`3 FLD data\filenametodelete.xml*`  
-`//Deleting files inside a GRF archive is still supported`  
-`4 GRF data\i_will_delete_you.txt*`
+```
+//this will extract patch1.gpf into the data folder
+1 FLD patch1.gpf
+//here, patch2.gpf will be mergegd with grf_file
+2 GRF patch2.gpf
+//You can also delete files from the data folder.
+3 FLD data\filenametodelete.xml*
+//Deleting files inside a GRF archive is still supported
+4 GRF data\i_will_delete_you.txt*
+```
 
 ## Making a .GPF patch
 
@@ -159,11 +166,9 @@ you have additional text/formatted/unformatted characters before your list actua
 
 ## See Also
 
-- [GRF](GRF "wikilink")
+- [GRF](../grf.md)
 
 ## External Links
 
 - [Official Neoncube Homepage](http://patch.neon-cube.net/)
 - [Official Neoncube Board Topic](http://www.eathena.ws/board/index.php?showtopic=130342)
-
-[Category:Patchers](Category:Patchers "wikilink")

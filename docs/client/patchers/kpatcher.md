@@ -1,6 +1,8 @@
+# KPatcher
+
 **KPatcher** is a Ragnarok Online auto-patcher, written in Embarcadero C++ Builder XE2. It was originally developed in
-the Russian eAthena community[1](http://www.eathena.ws/board/index.php?showtopic=216716), but later released as
-multi-language version[2](http://www.eathena.ws/board/index.php?showtopic=247878), currently supporting Russian,
+the Russian eAthena community ([link](http://www.eathena.ws/board/index.php?showtopic=216716)), but later released as
+multi-language version ([link](http://www.eathena.ws/board/index.php?showtopic=247878)), currently supporting Russian,
 English, Spanish, Japanese, Chinese, Portuguese and Indonesian, with further languages being planned. It consists of the
 patcher binary itself and a tool for creating configuration. It works on Windows 2000, Windows XP and higher.
 
@@ -75,23 +77,23 @@ The patch list is a simple text file, which uses one line for each patch. Patche
 beginning with // are considered a comment and ignored, which can also be used for disabling patches. Following patch
 types exist:
 
-- **PAU**  
+- **PAU**
   Specifies patch for updating the patcher.
       PAU:CRC:patcher.upd
 
   CRC is the checksum of the new patcher executable **patcher.upd**. If the CRC of the current patcher differs, update
   of the patcher will occur. Might appear everywhere in the patch list, but preferably at the beginning.
-- **GRF**  
+- **GRF**
   Specifies a patch, which will be applied to a GRF archive. This type has two forms; the first applies the patch to the
   main archive as specified in settings, the other applies the patch to the GRF archive specified before the type.
       PID:GRF:2010-09-30palettefix.gpf
 
       PID:adata.grf:GRF:2010-09-30palettefix.gpf
-- **ARCH**  
+- **ARCH**
   Specifies, that the patch is a ZIP archive, which will be extracted into the folder, where the patcher resides,
   including the folder structure stored inside the archive.
       PID:ARCH:newclient.zip
-- **GDF**  
+- **GDF**
   Specifies a file, to be removed from the main GRF archive.
       PID:GDF:data\clientinfo.xml
 
@@ -99,24 +101,24 @@ types exist:
   palette files (\*.pal), would be:
 
       PID:GDF:^.+\.pal$
-- **CDF**  
+- **CDF**
   Specifies a local file to be deleted from the folder, where the patcher resides.
       PID:CDF:dinput.dll
 
 #### Example
 
-`PAU:CRC:patcher.upd`  
-`//1:GRF:pal.gpf`  
-`2:GRF:rdata.grf`  
-`3:ARCH:lib.zip`  
-`//4:ARCH:data.zip`  
-`5:GDF:data\clientinfo.xml`  
-`6:CDF:dinput.dll`  
-`7:name.grf:GRF:patch.grf`
+```
+PAU:CRC:patcher.upd
+//1:GRF:pal.gpf
+2:GRF:rdata.grf
+3:ARCH:lib.zip
+//4:ARCH:data.zip
+5:GDF:data\clientinfo.xml
+6:CDF:dinput.dll
+7:name.grf:GRF:patch.grf
+```
 
 ## External Links
 
 - [Official KPatcher Topic (English)](http://www.eathena.ws/board/index.php?showtopic=247878)
 - [Official KPatcher Topic (Russian)](http://www.eathena.ws/board/index.php?showtopic=216716)
-
-[Category:Patchers](Category:Patchers "wikilink")

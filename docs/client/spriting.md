@@ -16,7 +16,7 @@ ingame). The background needs to 'Magenta'. The hexadecimal format of this color
 R 255, G 0, B 255.
 
 Now that you have the size and everything figured out, its time to change it from .bmp to indexed color. Download this
-file: [RO common colors](./ro-pixeling-colors.md"), then navigate to `Image > Mode > Indexed Color...` In the
+file: [RO common colors](./ro-pixeling-colors.md), then navigate to `Image > Mode > Indexed Color...` In the
 window that pops up, the palette can be anything you want, but if forced you select `Custom...` Then select load and
 change file type from .act to .pal, then find the .pal file then select and open it, it will be wherever you saved the
 file to. Once it has loaded, make sure the colors are 256, then select OK, then you will now have an image compatible

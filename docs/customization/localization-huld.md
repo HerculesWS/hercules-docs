@@ -27,9 +27,9 @@ To do that:
 1. Build your server, including HPM Hook plugins
 2. Build the `generate-translations.c` plugin (see [HPM](./hercules-plugin-manager.md))
 3. Run `./map-server --load-plugin HPMHooking --load-plugin generate-translations --generate-translations` this will:
-   1. Start map-server with "HPM Hooking" and "generate-translations" plugins loaded
-   2. Ask map-server to actually generate the translation files
-4. Once it complete, map-server will automatically shut down, this is expected.
+    1. Start map-server with "HPM Hooking" and "generate-translations" plugins loaded
+    2. Ask map-server to actually generate the translation files
+4. Once it completes, map-server will automatically shut down, this is expected.
 5. You can now see a folder called `generated_translations` in your repository root
 6. This folder contains everything you need to translate, see [Adding a language](#adding-a-language)
 

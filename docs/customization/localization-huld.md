@@ -1,6 +1,6 @@
 # Localization / Translations (HULD)
 
-Hercules servers are able to provide some sort of multi-language thanks to a feature 
+Hercules servers are able to provide some level of multi-language thanks to a feature 
 called Hercules Ultimate Localization Design (HULD for short).
 
 
@@ -79,7 +79,7 @@ For example:
 ```
 
 
-## Caveats
+## Caveats and limitations
 
 ### Global messages
 
@@ -132,3 +132,8 @@ if (Sex == SEX_MALE) {
 ```
 
 This would generate 2 messages for translation.
+
+
+### NPC/Monster names
+
+HULD doesn't support translation of NPC/Monster names.

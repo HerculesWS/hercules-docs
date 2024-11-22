@@ -36,6 +36,7 @@ theme:
     - content.action.view
     - content.code.copy
     - navigation.indexes
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top

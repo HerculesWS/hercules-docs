@@ -1,0 +1,9 @@
+nav:
+    - index.md
+    - supported-platforms.md
+    - system-requirements.md
+    - obtaining
+    - installation
+    - compiling
+    - configuration
+    - ...

@@ -1,3 +1,5 @@
+# Obtaining Hercules
+
 This article is aimed at downloading Hercules and any dependancies required to run it. In this article, you are expected
 to know basic file and program management of the OS you are attempting to run Hercules on. (Or use Google to search for
 the answers)

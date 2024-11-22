@@ -3,9 +3,9 @@
 
 ## Character Server Overview
 
-Character Server is where users/players go through while Character Select or Making new character. [Map
-Server](Map_Server "wikilink") also use this server to handle character data saving and load process. Character Server
-also holding inside it a [Inter Server](Inter_Server "wikilink").
+Character Server is where users/players go through while Character Select or Making new character.
+[Map Server](./map-server.md) also use this server to handle character data saving and load process. Character Server
+also holding inside it a [Inter Server](./inter-server.md).
 
 ## Character Server Tasks
 
@@ -15,8 +15,8 @@ also holding inside it a [Inter Server](Inter_Server "wikilink").
 
 ## Inter Server Overview
 
-Inter Server is made to sync between all [Map servers](Map_Server "wikilink"), in case you're using [Multi
-Zone](Multi_Zone "wikilink") System it will take care of sync all your servers.
+Inter Server is made to sync between all [Map servers](./map-server.md), in case you're using
+Multi Zone System it will take care of sync all your servers.
 
 ## Inter Server Tasks
 

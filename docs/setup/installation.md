@@ -54,10 +54,13 @@ to install and compile each package. Once subversion is installed, you can downl
 
 ### Windows OS's
 
-When using SVN in Windows, all your commands are in a right click menu integrated into the Windows Shell.  
-![](svnwindows.jpg "svnwindows.jpg")  
-Simply create a new folder, right click on it and select 'SVN Checkout...' and a dialog box will appear.  
-![](checkout.jpg "checkout.jpg")  
+!!! warning
+    This section is outdated.  SVN is no longer supported by Hercules. You should use Git instead.
+
+When using SVN in Windows, all your commands are in a right click menu integrated into the Windows Shell.
+
+Simply create a new folder, right click on it and select 'SVN Checkout...' and a dialog box will appear.
+
 Enter your URL (in the example above, simply add /trunk after the URL to checkout Trunk, or /branches/stable for stable)
 and TSVN will download a fresh copy of Hercule's SVN to that folder.
 

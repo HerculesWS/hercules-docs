@@ -1,0 +1,11 @@
+nav:
+    - index.md
+    - about
+    - basics
+    - overview
+    - setup
+    - customization
+    - scripting
+    - client
+    - contributing
+    - ...

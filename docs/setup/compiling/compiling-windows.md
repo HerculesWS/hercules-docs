@@ -4,10 +4,11 @@ For compiling on Windows, Visual Studio is the preferred method, although using 
 
 ### Using Visual Studio
 
-<img src="Compile_hercules.PNG"
+<img src="../assets/compile_hercules.png"
 title="MS Visual Studio 2012: Compile configuration (red) and solution (blue) with it&#39;s child projects." width="300"
-alt="MS Visual Studio 2012: Compile configuration (red) and solution (blue) with it&#39;s child projects." /> Hercules
-ships with solution and project files for Visual Studio from 2012 onwards.
+alt="MS Visual Studio 2012: Compile configuration (red) and solution (blue) with it&#39;s child projects." />
+
+Hercules ships with solution and project files for Visual Studio from 2012 onwards.
 
 - Download the latest version of [Visual Studio](https://www.visualstudio.com) (at the time of writing, MS Visual Studio
   2015 Community Edition) and install it, if you do not have Visual Studio already installed.

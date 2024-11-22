@@ -1,3 +1,5 @@
+# Obtaining Hercules
+
 Hercules is available through GitHub, a web-based hosting service for software development projects that use the GIT
 revision control system.
 
@@ -16,27 +18,50 @@ Alright, first go through MSysGit installer and just set it up (its used as a ba
 install MSysGit, launch the installer you just downloaded for TortoiseGit, you'll be prompted by a window similar to the
 following
 
-[framed\|center](File:tgit-1.jpeg "wikilink") [framed\|center\|The next window is "Choose SSH Client", select
-"TortoisePLink", hit Next.](File:tgit-2.jpeg "wikilink") [framed\|center\|The next window is "Custom Setup", do not
-change anything unless you know what you're doing, hit Next.](File:tgit-3.jpeg "wikilink") [framed\|center\|We're done
-with the installation, that was easy, wasn't it?](File:tgit-4.jpeg "wikilink")
+
+![](assets/tgit-1.jpeg)
+
+The next window is "Choose SSH Client", select "TortoisePLink", hit Next.
+
+[](assets/tgit-2.jpeg)
+
+The next window is "Custom Setup", do not change anything unless you know what you're doing, hit Next.
+
+![](assets/tgit-3.jpeg)
+
+We're done with the installation, that was easy, wasn't it?
+
+![](assets/tgit-4.jpeg)
 
 ### Obtaining Hercules
 
 Go to the folder where you want Hercules to be placed, right click and select "Git Clone..."
-[framed\|center](File:tgit-5.jpeg "wikilink") in the URL field, type the following:
+
+![](assets/tgit-5.jpeg)
+
+in the URL field, type the following:
 
 ` `[`https://github.com/HerculesWS/Hercules.git`](https://github.com/HerculesWS/Hercules.git)
 
-ensure the 'Directory' field is as desired, and hit 'OK' [framed\|center](File:tgit-6.jpeg "wikilink")
-[framed\|center\|Now Hercules is being downloaded](File:tgit-7.jpeg "wikilink") Just wait for it to complete the
-download of your working copy and you'll be good to go.
+ensure the 'Directory' field is as desired, and hit 'OK' 
+
+![](assets/tgit-6.jpeg)
+
+Now Hercules is being downloaded
+
+![](assets/tgit-7.jpeg)
+
+Just wait for it to complete the download of your working copy and you'll be good to go.
 
 ### Updating Hercules
 
-Right-Click the folder where you downloaded your working copy and within the TortoiseGit menu, select "Pull..." as shown
-below [framed\|center](File:tgit-8.jpeg "wikilink") On the following window just hit 'OK', and your working copy will
-update. ![\|center\|framed](tgit-9.jpeg "|center|framed")
+Right-Click the folder where you downloaded your working copy and within the TortoiseGit menu, select "Pull..." as shown below
+
+![](assets/tgit-8.jpeg)
+
+On the following window just hit 'OK', and your working copy will update.
+
+![](assets/tgit-9.jpeg)
 
 # Obtaining Hercules on Linux
 
@@ -71,5 +96,3 @@ Type the following to create a Hercules working copy in your home (~) directory:
 Type the following when inside your working copy:
 
 ` git pull`
-
-[Category:Installation](Category:Installation "wikilink")

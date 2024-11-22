@@ -41,7 +41,6 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - toc.follow
-    - toc.integrate
   favicon: assets/Hercules48.png
   logo: assets/Hercules48.png
   name: material
